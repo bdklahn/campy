@@ -4,7 +4,7 @@ import sys, screed, re
 # "rep" = "repeat"
 
 rep_num = int(sys.argv[1])
-rep_str = sys.argv[2]
+rep_str = str(sys.argv[2]).upper
 
 trunc_rep = rep_str * rep_num
 len_rep_str = len(rep_str)
@@ -14,8 +14,8 @@ rep_pat = re.compile (rep_pat_txt)
 
 for record in screed.open(sys.argv[3]):
    name = record.name
-   sequence = orig_seq = record.sequence
-   qual = orig_qual = record.accuracy
+   sequence = record.sequence
+   qual = record.accuracy
 
    shorter_by = 0
    for match in rep_pat.finditer(sequence):
