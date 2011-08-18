@@ -4,7 +4,7 @@ import sys, screed, re
 # "rep" = "repeat"
 
 rep_num = int(sys.argv[1])
-rep_str = str(sys.argv[2]).upper
+rep_str = str(sys.argv[2]).upper()
 
 trunc_rep = rep_str * rep_num
 len_rep_str = len(rep_str)
